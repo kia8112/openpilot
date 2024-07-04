@@ -94,7 +94,7 @@ jobs:
     name: docker push multiarch tag
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request' && github.repository == 'commaai/openpilot'
-    needs: [build]
+    needs: [aarch]
     steps:
     - uses: actions/checkout@v4
       with:
