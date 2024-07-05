@@ -143,6 +143,7 @@ jobs:
       timeout-minutes: 30
       run: |
         ${{ env.RUN }} "source selfdrive/test/setup_xvfb.sh && \
+                        echo $PYTEST && \
                         export MAPBOX_TOKEN='pk.eyJ1Ijoiam5ld2IiLCJhIjoiY2xxNW8zZXprMGw1ZzJwbzZneHd2NHljbSJ9.gV7VPRfbXFetD-1OVF0XZg' && \
                         $PYTEST --timeout 60 -m 'not slow' && \
                         ./selfdrive/ui/tests/create_test_translations.sh && \
